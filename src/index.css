@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'averta';
+  src: local('Averta'), url(./Fonts/AvertaDemoPE-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'averta-bold';
+  src: local('Averta-bold'), url(./Fonts/AvertaDemoPE-ExtraboldItalic.woff) format('woff');
+}
+@font-face {
+  font-family: 'liquido';
+  src: local('Liquido'), url(./Fonts/LIQUIDO-Reguar.otf) format('opentype');
+}
+@font-face {
+  font-family: 'liquido-fluid';
+  src: local('Liquido-fluid'), url(./Fonts/LIQUIDO-Fluid.otf) format('opentype');
+}
+
+.averta {
+  font-family: 'averta';
+}
+.averta-bold {
+  font-family: 'averta-bold';
+}
+.liquido {
+  font-family: 'liquido';
+}
+.liquido-fluid {
+  font-family: 'liquido-fluid';
 }
