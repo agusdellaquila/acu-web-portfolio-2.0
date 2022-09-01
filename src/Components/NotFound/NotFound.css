@@ -1,0 +1,19 @@
+.notfound-avatar {
+    width: 120px;
+    position: absolute;
+    left: 15px;
+    top: 28%;
+}
+@media (min-width: 1024px){
+    .notfound-avatar {
+        width: 200px;
+        left: 100px;
+    }
+}
+@media (min-width: 576px) and (max-width: 1023px) {
+    .notfound-avatar {
+        width: 220px;
+        top: 20%;
+        left: 90px;
+    }
+}

@@ -3,7 +3,7 @@ import "./Home.css"
 const Home = () => {
   return (
     <div>
-        <h1>Acu</h1>
+        <img src="/media/avatar/Avatar.png" alt="avatar logo" />
     </div>
   );
 }

@@ -21,7 +21,7 @@ const projects = [
       href: '#',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Person using a pen to cross a task off a projectivity paper card.',
-      techs: ['red']
+      techs: ['green']
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ const projects = [
       href: 'https://cobra-denim.vercel.app/',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-      techs: ['red']
+      techs: ['blue']
     },
     {
         id: 5,
@@ -58,10 +58,9 @@ const Projects = () => {
                   />
                 </div>
                 <h3 className="mt-4 text-gray-700 averta-bold text-xl">{project.name}</h3>
-                <p className="mt-1 text-lg font-medium text-gray-900">{project.price}</p>
                 {project.techs.map((tech) => {
                     {console.log(tech)}
-                    return <div key={tech} className={`w-2 h-2 rounded-full bg-${tech}-400`} />
+                    return <div key={tech} className={`w-2 h-2 rounded-full bg-${tech}-400`}></div>
                 })}
               </a>
             ))}
