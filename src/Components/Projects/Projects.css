@@ -1,0 +1,9 @@
+.tech-bubble {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 6px 5px;
+}
+.tech-bubble:first-child {
+    margin-left: 0;
+}

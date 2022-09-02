@@ -16,9 +16,9 @@ const navigation = {
           id: 'Gaming',
           name: 'Gaming',
           items: [
-            { name: 'My favourite games', href: '/games-favourites' },
-            { name: 'My proudest achievements', href: '/games-achievements' },
-            { name: "The games I've completed", href: '/games-completed' },
+            { name: 'My proudest achievements', href: '/games/#games-achievements' },
+            { name: 'My favourite games', href: '/games/#games-favourites' },
+            { name: "The games I've completed", href: '/games'},
           ],
         },
         {
@@ -43,7 +43,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div>
+      {/* <div className='checkbox m-12'>
+        <input id="toggle" type="checkbox" onClick={() => func}/>
+        <label htmlFor ="toggle" className='switch'/>
+      </div> */}
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -69,11 +73,11 @@ const Navbar = () => {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+              <Dialog.Panel className="relative flex max-w-xs flex-col overflow-y-auto pb-12 shadow-xl theme-container">
                 <div className="flex px-4 pt-5 pb-2">
                   <button
                     type="button"
-                    className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                    className="-m-2 inline-flex items-center justify-center rounded-md p-2"
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
@@ -93,14 +97,14 @@ const Navbar = () => {
                 </div>
                 
                 <Tab.Group as="div" className="mt-2">
-                  <div className="">
-                    <Tab.List className="space-y-6 border-t border-gray-200 py-6 px-4">
+                  <div className="flex">
+                    <Tab.List className="space-y-6 border-t border-gray-200 py-2 px-4">
                       {navigation.categories.map((category) => (
                         <Tab
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 border-transparent',
+                              selected ? 'text-indigo-600 border-indigo-600' : 'border-transparent',
                               'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium'
                             )
                           }
@@ -115,7 +119,7 @@ const Navbar = () => {
                       <Tab.Panel key={category.name} className="px-4 pb-8">
                         {category.sections.map((section) => (
                           <div key={section.name}>
-                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900 pt-2">
+                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium pt-2">
                               {section.name}
                             </p>
                             <ul
@@ -125,7 +129,7 @@ const Navbar = () => {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <a href={item.href} className="-m-2 block p-2 text-gray-500">
+                                  <a href={item.href} className="-m-2 block p-2">
                                     {item.name}
                                   </a>
                                 </li>
@@ -139,7 +143,7 @@ const Navbar = () => {
                 </Tab.Group>
 
                 <div className="border-t border-gray-200 py-6 px-4">
-                  <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center text-gray-700 hover:text-gray-800">
+                  <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png?20120912082242"
                       alt="Argentina"
@@ -153,13 +157,13 @@ const Navbar = () => {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
+      <header className="relative">
         <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
-            <div className="flex h-16 items-center">
+            <div className="navbar flex h-16 items-center">
               <button
                 type="button"
-                className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                className="rounded-md p-2 lg:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
@@ -185,7 +189,7 @@ const Navbar = () => {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-sm font-medium"
                     >
                       {page.name}
                     </a>
@@ -199,9 +203,9 @@ const Navbar = () => {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-indigo-600 text-indigo-600'
-                                  : 'border-transparent text-gray-700 hover:text-gray-800',
-                                'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
+                                  ? 'text-indigo-500'
+                                  : 'border-transparent',
+                                'relative z-10 -mb-px flex items-center pt-px text-sm font-medium transition-colors duration-200 ease-out'
                               )}
                             >
                               {category.name}
@@ -218,16 +222,15 @@ const Navbar = () => {
                             leaveTo="opacity-0"
                           >
                             <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
+                              <div className="absolute inset-0 top-1/2 theme-bg shadow" aria-hidden="true" />
 
-                              <div className="relative bg-white">
-                                <div className="mx-auto max-w-7xl px-8">
+                              <div className="relative theme-bg">
+                                <div className="mx-auto theme-container max-w-7xl px-8">
                                   <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
                                     <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
-                                          <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                          <p id={`${section.name}-heading`} className="font-medium theme-color-accent">
                                             {section.name}
                                           </p>
                                           <ul
@@ -260,7 +263,7 @@ const Navbar = () => {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center text-gray-700 hover:text-gray-800">
+                  <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png?20120912082242"
                       alt="Argentina"
@@ -272,7 +275,7 @@ const Navbar = () => {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="flex rounded-full text-sm">
                       <span className="sr-only">Open user menu</span>
                       <img
                       className="h-10 w-10 rounded-full"
@@ -281,21 +284,12 @@ const Navbar = () => {
                     />
                   </Menu.Button>
                 </div>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="theme-bg-alt absolute right-0 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-1 ring-black ring-opacity-5">
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          className={classNames(active ? 'bg-gray-100' : '', 'theme-text-primary block px-4 py-2 text-sm')}
                         >
                           Your Profile
                         </a>
@@ -305,14 +299,13 @@ const Navbar = () => {
                       {({ active }) => (
                         <a
                           href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          className={classNames(active ? 'bg-gray-100' : '', 'theme-text-primary block px-4 py-2 text-sm')}
                         >
                           Settings
                         </a>
                       )}
                     </Menu.Item>
                   </Menu.Items>
-                </Transition>
               </Menu>
 
 

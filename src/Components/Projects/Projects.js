@@ -1,3 +1,5 @@
+import "./Projects.css"
+
 const projects = [
     {
       id: 1,
@@ -5,7 +7,7 @@ const projects = [
       href: 'https://en-pie-wines.vercel.app/',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-      techs: ['red', 'green']
+      techs: ['react', 'js', 'css']
     },
     {
       id: 2,
@@ -13,7 +15,7 @@ const projects = [
       href: 'https://github.com/agusdellaquila/rec0rder',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-      techs: ['red', 'blue']
+      techs: ['express', 'react', 'js', 'css']
     },
     {
       id: 3,
@@ -21,7 +23,7 @@ const projects = [
       href: '#',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Person using a pen to cross a task off a projectivity paper card.',
-      techs: ['green']
+      techs: ['react', 'js', 'css']
     },
     {
       id: 4,
@@ -29,7 +31,7 @@ const projects = [
       href: 'https://cobra-denim.vercel.app/',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-      techs: ['blue']
+      techs: ['html', 'css']
     },
     {
         id: 5,
@@ -37,32 +39,40 @@ const projects = [
         href: 'https://acu-dex.vercel.app/',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-        techs: ['red']
+        techs: ['react', 'js', 'css']
     }
-  ]
+]
   
 const Projects = () => {
     return (
-      <div className="bg-white">
+      <div className="theme-container">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="sr-only">Projects</h2>
   
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {projects.map((project) => (
-              <a key={project.id} href={project.href} target="blank" className="group">
-                <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-                  <img
-                    src={project.imageSrc}
-                    alt={project.imageAlt}
-                    className="h-full w-full object-cover object-center group-hover:opacity-75"
-                  />
-                </div>
-                <h3 className="mt-4 text-gray-700 averta-bold text-xl">{project.name}</h3>
-                {project.techs.map((tech) => {
-                    {console.log(tech)}
-                    return <div key={tech} className={`w-2 h-2 rounded-full bg-${tech}-400`}></div>
-                })}
-              </a>
+              <div key={project.id}>
+                <a href={project.href} target="blank" className="group">
+                  <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                    <img
+                      src={project.imageSrc}
+                      alt={project.imageAlt}
+                      className="h-full w-full object-cover object-center group-hover:opacity-75"
+                    />
+                  </div>
+                  <h3 className="mt-4 averta-bold text-xl">{project.name}</h3>
+                  <div className="flex">
+                    {project.techs.map((tech) => {
+                      let colors = (tech === 'html') ? 'bg-yellow-600 tech-bubble' : (tech === 'css') ? 'bg-blue-200 tech-bubble' : (tech === 'js') ? 'bg-yellow-500 tech-bubble' : (tech === 'react') ? 'bg-indigo-500 tech-bubble' : (tech === 'express') ? 'bg-gray-700 tech-bubble' : 'bg-gray-300 tech-bubble'
+                      return (
+                        <div className="tooltip">
+                          <div key={tech} className={`${colors}`}></div>
+                          <div className="tooltiptext averta-bold">{tech}</div>
+                        </div>)
+                    })}
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
         </div>

@@ -36,3 +36,64 @@ code {
 .liquido-fluid {
   font-family: 'liquido-fluid';
 }
+
+:root {
+  --background: white;
+  --background-alt: rgb(234, 234, 234);
+  --text-primary: black;
+  --text-secondary: #4f46e5;
+  --accent: #6366f1;
+}
+[data-theme='dark'] {
+  --background: #040F16;
+  --background-alt: #07161f;
+  --text-primary: white;
+  --text-secondary: #4f46e5;
+  --accent: #6366f1;
+}
+.vh {
+  height: 100vh;
+}
+.theme-container {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+.theme-text-primary {
+  color: var(--text-primary)
+}
+.theme-text-secondary {
+  color: var(--text-secondary)
+}
+.theme-color-accent {
+  color: var(--accent)
+}
+.theme-bg {
+  background-color: var(--background)
+}
+.theme-bg-alt {
+  background-color: var(--background-alt)
+}
+/* -------------------------------------------------------------- */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
