@@ -26,12 +26,12 @@
     display: none;
   }
   .switch {
-    --width: 80px;
+    --width: 50px;
     position: relative;
     display: flex;
     align-items: center;
     width: var(--width);
-    height: 45px;
+    height: 25px;
     outline: 5px solid #eaeef0;
     background-color: #fff;
     cursor: pointer;
@@ -48,8 +48,8 @@
     transition: opacity .5s;
   }
   .switch::after {
-    --size: 35px;
-    --gap: 5px;
+    --size: 25px;
+    --gap: 0px;
     content: "\f186";
     font-family: 'averta';
     display: grid;

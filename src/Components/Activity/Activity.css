@@ -1,0 +1,55 @@
+.activity {
+    width: 90%;
+    margin: 0 auto;
+}
+.servicesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.serviceCard {
+    background-color: rgba(0, 0, 0, 0.122);
+    width: 115px;
+    height: 115px;
+    border-radius: 15px;
+    margin: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.serviceId {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+.serviceList {
+    flex-direction: row !important;
+}
+.serviceList div {
+    margin: 0 3rem !important;
+}
+.serviceDescription {
+    text-align: center;
+}
+.seeCert {
+    background-color: #34394258;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0 0.5rem; 
+}
+@media (min-width: 576px) and (max-width: 1023px) {
+    .activity {
+        width: 60%;
+    }
+}
+@media (min-width: 1024px) {
+    .activity {
+        width: 65%;
+    }
+}

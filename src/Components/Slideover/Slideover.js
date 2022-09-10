@@ -1,9 +1,10 @@
+/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-const ProjectInfo = () => {
-  const [open, setOpen] = useState(true)
+const Slideover = (props) => {
+  const [open, setOpen] = useState(false)
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -60,6 +61,7 @@ const ProjectInfo = () => {
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       {/* Replace with your content */}
                       <div className="absolute inset-0 px-4 sm:px-6">
+                        <p>{props.name}</p>
                         <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" />
                       </div>
                       {/* /End replace */}
@@ -74,4 +76,5 @@ const ProjectInfo = () => {
     </Transition.Root>
   )
 }
-export default ProjectInfo
+
+export default Slideover

@@ -1,5 +1,6 @@
+import "./Navbar.css"
 import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
+import { Dialog, Popover, Tab, Transition, Menu, Switch } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = {
@@ -13,21 +14,26 @@ const navigation = {
       name: 'Personal',
       sections: [
         {
-          id: 'Gaming',
+          id: 'games',
           name: 'Gaming',
           items: [
             { name: 'My proudest achievements', href: '/games/#games-achievements' },
-            { name: 'My favourite games', href: '/games/#games-favourites' },
-            { name: "The games I've completed", href: '/games'},
+            { name: 'Games that made me who I am', href: '/games/#games-favourites' },
           ],
         },
         {
-          id: 'Movies/TV shows',
-          name: 'Movies / TV Shows',
+          id: 'movies',
+          name: 'Movies / Series',
           items: [
-            { name: 'My favourite Movies', href: '/movies-favourites' },
-            { name: 'My favourite Tv Shows', href: '/movies-achievements' },
-            { name: "...", href: '/movies-completed' },
+            { name: 'My favourite Movies', href: '/movies' },
+            { name: 'My favourite Series', href: '/movies' },
+          ],
+        },
+        {
+          id: 'gallery',
+          name: 'GALL·E·RY',
+          items: [
+            { name: 'My AI generated art gallery', href: '/AI-gallery' },
           ],
         }
       ],
@@ -39,15 +45,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = () => {
+const Navbar = ({switchTheme}) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div>
-      {/* <div className='checkbox m-12'>
-        <input id="toggle" type="checkbox" onClick={() => func}/>
-        <label htmlFor ="toggle" className='switch'/>
-      </div> */}
+    <div className="sticky top-0 theme-bg z-10">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -86,10 +88,10 @@ const Navbar = () => {
                 </div>
 
                 {/* Links */}
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
+                <div className="space-y-6 border-t py-6 px-4">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <a href={page.href} className="text-indigo-600 border-indigo-600 flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium">
+                      <a href={page.href} className="hover:text-indigo-600 flex-1 whitespace-nowrap py-4 px-1 text-base font-medium">
                         {page.name}
                       </a>
                     </div>
@@ -98,14 +100,14 @@ const Navbar = () => {
                 
                 <Tab.Group as="div" className="mt-2">
                   <div className="flex">
-                    <Tab.List className="space-y-6 border-t border-gray-200 py-2 px-4">
+                    <Tab.List className="space-y-6 py-2 px-4">
                       {navigation.categories.map((category) => (
                         <Tab
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'text-indigo-600 border-indigo-600' : 'border-transparent',
-                              'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium'
+                              selected ? 'text-indigo-600' : 'border-transparent',
+                              'flex-1 whitespace-nowrap py-4 px-1 text-base font-medium'
                             )
                           }
                         >
@@ -158,7 +160,7 @@ const Navbar = () => {
       </Transition.Root>
 
       <header className="relative">
-        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Top" className="mx-auto navwidth px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
             <div className="navbar flex h-16 items-center">
               <button
@@ -172,11 +174,11 @@ const Navbar = () => {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Workflow</span>
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                    className="h-12 w-auto ml-2"
+                    src="https://agusdellaquila.github.io/acu-web-portfolio/img/animoji/animoji_peace.png"
                     alt=""
                   />
                 </a>
@@ -226,7 +228,7 @@ const Navbar = () => {
 
                               <div className="relative theme-bg">
                                 <div className="mx-auto theme-container max-w-7xl px-8">
-                                  <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
+                                  <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-8">
                                     <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
@@ -262,6 +264,10 @@ const Navbar = () => {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
+                <div className='checkbox m-12'>
+                  <input id="toggle" type="checkbox" onClick={switchTheme}/>
+                  <label htmlFor ="toggle" className='switch'/>
+                </div>
                 <div className="hidden lg:ml-8 lg:flex">
                   <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center">
                     <img
@@ -307,8 +313,6 @@ const Navbar = () => {
                     </Menu.Item>
                   </Menu.Items>
               </Menu>
-
-
               </div>
             </div>
           </div>
