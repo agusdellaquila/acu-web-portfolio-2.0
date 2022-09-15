@@ -1,4 +1,3 @@
-import "./Navbar.css"
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -162,9 +161,9 @@ const Navbar = ({switchTheme}) => {
       </Transition.Root>
 
       <header className="relative">
-        <nav aria-label="Top" className="mx-auto navwidth px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
-            <div className="navbar flex h-16 items-center">
+            <div className="navbar theme-bg w-full  flex h-16 items-center">
               <button
                 type="button"
                 className="rounded-md p-2 lg:hidden"
@@ -275,7 +274,7 @@ const Navbar = ({switchTheme}) => {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png?20120912082242"
                       alt="Argentina"
-                      className="block h-auto w-7 flex-shrink-0"
+                      className="block h-auto w-7 flex-shrink-0 mr-4"
                     />
                   </a>
                 </div>

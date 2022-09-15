@@ -6,7 +6,7 @@ const Alert = ({image, imageAlt, description, link, setDetails }) => {
             <button className='btn btnSecondary alertClose' onClick={() => {setDetails(false)}}>
                 <img src="https://img.icons8.com/nolan/344/delete-sign.png" width="32px" height="32px" alt="Close icon" />
             </button>
-            <div className="w-16 mx-auto">
+            <div className="w-32 mx-auto">
                 <img src={image} alt={imageAlt} />
             </div>
             <div className="w-full text-md mt-8 mb-3">
