@@ -49,7 +49,7 @@ code {
 
 :root {
   --background: white;
-  --background-alt: rgb(246, 246, 246)
+  --background-alt: rgb(246, 246, 246);
   --text-primary: black;
   --text-secondary: #756fea;
   --accent: #6366f1;
