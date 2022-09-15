@@ -70,22 +70,22 @@ code {
   color: var(--text-primary);
 }
 .theme-text-primary {
-  color: var(--text-primary)
+  color: var(--text-primary);
 }
 .theme-text-secondary {
-  color: var(--text-secondary)
+  color: var(--text-secondary);
 }
 .theme-color-accent {
-  color: var(--accent)
+  color: var(--accent);
 }
 .theme-bg {
-  background-color: var(--background)
+  background-color: var(--background);
 }
 .theme-bg-alt {
-  background-color: var(--background-alt)
+  background-color: var(--background-alt);
 }
 .theme-bg-accent {
-  background-color: var(--accent)
+  background-color: var(--accent);
 }
 /* -------------------------------------------------------------- */
 .tooltip {

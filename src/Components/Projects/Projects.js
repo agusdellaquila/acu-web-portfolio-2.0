@@ -106,7 +106,7 @@ const Projects = () => {
           </div>
 
           {
-            details ? <Slideover setStatus={setRender} link={render.href} image={render.imageSrc} imageAlt={render.imageAlt} description={render.description} /> : null
+            details ? <Slideover setStatus={setRender} setDetails={setDetails} link={render.href} image={render.imageSrc} imageAlt={render.imageAlt} description={render.description} /> : null
           }
 
         </div>

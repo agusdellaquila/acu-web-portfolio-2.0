@@ -5,9 +5,13 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 const Slideover = (props) => {
   const [open, setOpen] = useState(true)
 
+  const closure = () => {
+    props.setDetails(false)
+  }
+
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={props.setStatus}>
+      <Dialog as="div" className="relative z-10" onClose={closure}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
