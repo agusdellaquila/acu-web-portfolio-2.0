@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
+import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = {
@@ -49,7 +49,7 @@ const Navbar = ({switchTheme}) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="sticky top-0 z-10 theme-bg">
+    <div className="sticky top-0 z-10">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -279,42 +279,14 @@ const Navbar = ({switchTheme}) => {
                     />
                   </a>
                 </div>
-                
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full text-sm">
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                      className="h-10 w-10 rounded-full"
-                      src="/media/me/me.png"
-                      alt=""
-                    />
-                  </Menu.Button>
+                <div className="flex rounded-full text-sm">
+                  <span className="sr-only">Open user menu</span>
+                  <img
+                  className="h-10 w-10 rounded-full"
+                  src="/media/me/me.png"
+                  alt=""
+                  />
                 </div>
-                  <Menu.Items className="theme-bg absolute right-0 mt-10 w-48 origin-top-right rounded-md py-1 shadow-lg">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'theme-bg-alt' : '', 'theme-text-primary block px-4 py-2 text-sm')}
-                        >
-                          Your Profile
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'theme-bg-alt' : '', 'theme-text-primary block px-4 py-2 text-sm')}
-                        >
-                          Settings
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-              </Menu>
               </div>
             </div>
           </div>
