@@ -12,7 +12,7 @@ const achievements = [
 const Gaming = () => {
 return (
     <div className="theme-container">
-        <div className="mx-auto max-w-2xl items-center gap-x-8 px-4 sm:px-6 sm:py-16 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto max-w-2xl items-center gap-x-8 px-4 sm:px-6 py-8 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div id="games-achievements">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My Proudest Archievements</h2>
                 <p className="mt-4">

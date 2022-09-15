@@ -1,14 +1,13 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 const Slideover = (props) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog as="div" className="relative z-10" onClose={props.setStatus}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -47,24 +46,28 @@ const Slideover = (props) => {
                       <button
                         type="button"
                         className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                        onClick={() => setOpen(false)}
+                        onClick={() => {
+                          setOpen(false)
+                          props.setStatus(false)
+                        }}
                       >
                         <span className="sr-only">Close panel</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
-                    </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      {/* Replace with your content */}
-                      <div className="absolute inset-0 px-4 sm:px-6">
-                        <p>{props.name}</p>
-                        <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" />
+
+                  <div className="flex h-full flex-col overflow-y-scroll bg-gray-50 py-6 shadow-xl">
+                    <div className="relative mt-6 flex-1 sm:px-6">
+                      <div className="absolute inset-0 px-4 sm:px-6 flex items-center m-y-auto">
+                        <div className="h-max-content w-full border-2 p-8 border-dashed border-gray-200 flex-col" aria-hidden="true">
+                          <img className='m-auto' src={props.image} alt={props.imageAlt} />                      
+                          <p className='p-8'> {props.description} </p>
+                          <div className='justify-center m-auto w-max-content'>
+                            <a className='theme-bg-accent text-white p-2 averta rounded' href={props.link}> Visit deploy </a>
+                          </div>
+                        </div>
                       </div>
-                      {/* /End replace */}
                     </div>
                   </div>
                 </Dialog.Panel>

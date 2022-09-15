@@ -49,16 +49,16 @@ code {
 
 :root {
   --background: white;
-  --background-alt: white;
+  --background-alt: rgb(246, 246, 246)
   --text-primary: black;
-  --text-secondary: #4f46e5;
+  --text-secondary: #756fea;
   --accent: #6366f1;
 }
 [data-theme='dark'] {
   --background: #181728;
   --background-alt: #34335064;
   --text-primary: white;
-  --text-secondary: #4f46e5;
+  --text-secondary: #756fea;
   --accent: #6366f1;
   /* 040F16  1a1839*/
 }
@@ -83,6 +83,9 @@ code {
 }
 .theme-bg-alt {
   background-color: var(--background-alt)
+}
+.theme-bg-accent {
+  background-color: var(--accent)
 }
 /* -------------------------------------------------------------- */
 .tooltip {
@@ -115,4 +118,12 @@ code {
 
 .w-max-content {
   width: max-content;
+}
+.sm-hide {
+  display: none;
+}
+@media (min-width: 634px) {
+  .sm-hide {
+    display: block;
+  }
 }

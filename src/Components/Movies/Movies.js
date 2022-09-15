@@ -1,23 +1,18 @@
 const Movies = () => {
     return (
         <div className="theme-container">
-            <div className="mx-auto max-w-2xl items-center gap-x-8 px-4 sm:px-6 sm:py-16 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+            <div className="mx-auto max-w-2xl items-center gap-x-8 px-4 sm:px-6 py-8 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
                 <div id="movies-fav">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My favourite Movies of all time</h2>
-                    <p className="mt-4">
-                        ...
-                    </p>
-    
-                    {/* <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        {achievements.map((achievement) => (
-                        <div key={achievement.name} className="border-t border-gray-200 pt-4">
-                            <img src={achievement.image} alt={achievement.alt} width='64px' height='64px'/>
-                            <dt className="font-medium mt-4">{achievement.name}</dt>
-                            <dd className="mt-2 text-smb theme-color-accent font-semibold">{achievement.description}</dd>
-                            <dd className="mt-2 text-sm">{achievement.comment}</dd>
-                        </div>
-                        ))}
-                    </dl> */}
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My top 6 favourite Movies</h2>
+                    
+                    <div className="flex flex-wrap overflow-hidden gap-x-6 mt-10">
+                        <img className="rounded w-40 h-56 mt-4" src="https://i.pinimg.com/originals/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" alt="top movie image" />
+                        <img className="rounded w-40 h-56 mt-4" src="https://www.themoviedb.org/t/p/original/c54HpQmuwXjHq2C9wmoACjxoom3.jpg" alt="top movie image" />
+                        <img className="rounded w-40 h-56 mt-4" src="https://m.media-amazon.com/images/I/71WXAx7T8-L._AC_SY679_.jpg" alt="top movie image" />
+                        <img className="rounded w-40 h-56 mt-4" src="https://i.pinimg.com/originals/cf/fe/5c/cffe5c5cf6150a2104cc3a486e9be4f7.jpg" alt="top movie image" />
+                        <img className="rounded w-40 h-56 mt-4" src="https://m.media-amazon.com/images/I/91VLgR0mXrL._AC_SY679_.jpg" alt="top movie image" />
+                        <img className="rounded w-40 h-56 mt-4" src="https://m.media-amazon.com/images/M/MV5BMWVjYTQwZTktMjk4NS00Y2YxLTliZGQtYjQ5N2VjZjlmZGI1XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg" alt="top movie image" />
+                    </div>
                 </div>
     
                 <div className="divider-horizontal-line mt-12"></div>

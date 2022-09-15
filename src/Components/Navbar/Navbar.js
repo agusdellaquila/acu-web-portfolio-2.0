@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition, Menu, Switch } from '@headlessui/react'
+import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = {
@@ -49,7 +49,7 @@ const Navbar = ({switchTheme}) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="sticky top-0 theme-bg z-10">
+    <div className="sticky top-0 z-10 theme-bg">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -62,7 +62,7 @@ const Navbar = ({switchTheme}) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-opacity-25" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-40 flex">
@@ -75,7 +75,7 @@ const Navbar = ({switchTheme}) => {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex max-w-xs flex-col overflow-y-auto pb-12 shadow-xl theme-container">
+              <Dialog.Panel className="bg-white relative flex max-w-xs flex-col overflow-y-auto pb-12 shadow-xl">
                 <div className="flex px-4 pt-5 pb-2">
                   <button
                     type="button"
@@ -88,46 +88,48 @@ const Navbar = ({switchTheme}) => {
                 </div>
 
                 {/* Links */}
-                <div className="space-y-6 border-t py-6 px-4">
+                <div className="space-y-6 border-t py-4 px-4">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <a href={page.href} className="hover:text-indigo-600 flex-1 whitespace-nowrap py-4 px-1 text-base font-medium">
+                      <a href={page.href} className="theme-text-secondary flex-1 whitespace-nowrap py-4 px-1 text-base font-semibold underline">
                         {page.name}
                       </a>
                     </div>
                   ))}
                 </div>
                 
-                <Tab.Group as="div" className="mt-2">
+                <div className="border-b border-gray-300"></div>
+                <Tab.Group as="div" className="">
                   <div className="flex">
-                    <Tab.List className="space-y-6 py-2 px-4">
+                    <Tab.List className="px-4">
                       {navigation.categories.map((category) => (
                         <Tab
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'text-indigo-600' : 'border-transparent',
-                              'flex-1 whitespace-nowrap py-4 px-1 text-base font-medium'
+                              selected ? 'theme-text-secondary' : 'border-transparent',
+                              'flex-1 whitespace-nowrap pt-4 px-1 text-base font-medium'
                             )
                           }
                         >
                           {category.name}
                         </Tab>
                       ))}
+                      <div className="border-b border-gray-100"></div>
                     </Tab.List>
                   </div>
                   <Tab.Panels as={Fragment}>
                     {navigation.categories.map((category) => (
-                      <Tab.Panel key={category.name} className="px-4 pb-8">
+                      <Tab.Panel key={category.name} className="px-4 pb-8 ml-1">
                         {category.sections.map((section) => (
                           <div key={section.name}>
-                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium pt-2">
+                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-600 pt-4">
                               {section.name}
                             </p>
                             <ul
                               role="list"
                               aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                              className="mt-6 flex flex-col space-y-6"
+                              className="mt-1 flex flex-col font-normal space-y-2"
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
@@ -144,7 +146,7 @@ const Navbar = ({switchTheme}) => {
                   </Tab.Panels>
                 </Tab.Group>
 
-                <div className="border-t border-gray-200 py-6 px-4">
+                <div className="border-t border-gray-200 py-6 px-4 ml-1">
                   <a href="https://pbs.twimg.com/media/ExHxTlFWEAEmhTd.jpg" target="blank" className="flex items-center">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png?20120912082242"
@@ -177,7 +179,7 @@ const Navbar = ({switchTheme}) => {
                 <a href="/">
                   <span className="sr-only">Workflow</span>
                   <img
-                    className="h-12 w-auto ml-2"
+                    className="h-12 w-auto ml-2 sm-hide"
                     src="https://agusdellaquila.github.io/acu-web-portfolio/img/animoji/animoji_peace.png"
                     alt=""
                   />
@@ -228,8 +230,8 @@ const Navbar = ({switchTheme}) => {
 
                               <div className="relative theme-bg">
                                 <div className="mx-auto theme-container max-w-7xl px-8">
-                                  <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-8">
-                                    <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
+                                  <div className="grid grid gap-y-10 gap-x-8 py-8">
+                                    <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-0 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
                                           <p id={`${section.name}-heading`} className="font-medium theme-color-accent">
@@ -242,7 +244,7 @@ const Navbar = ({switchTheme}) => {
                                           >
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
-                                                <a href={item.href} className="hover:text-gray-800">
+                                                <a href={item.href} className="hover:text-indigo-500">
                                                   {item.name}
                                                 </a>
                                               </li>
@@ -290,12 +292,12 @@ const Navbar = ({switchTheme}) => {
                     />
                   </Menu.Button>
                 </div>
-                  <Menu.Items className="theme-bg-alt absolute right-0 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-1 ring-black ring-opacity-5">
+                  <Menu.Items className="theme-bg absolute right-0 mt-10 w-48 origin-top-right rounded-md py-1 shadow-lg">
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'theme-text-primary block px-4 py-2 text-sm')}
+                          className={classNames(active ? 'theme-bg-alt' : '', 'theme-text-primary block px-4 py-2 text-sm')}
                         >
                           Your Profile
                         </a>
@@ -305,7 +307,7 @@ const Navbar = ({switchTheme}) => {
                       {({ active }) => (
                         <a
                           href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'theme-text-primary block px-4 py-2 text-sm')}
+                          className={classNames(active ? 'theme-bg-alt' : '', 'theme-text-primary block px-4 py-2 text-sm')}
                         >
                           Settings
                         </a>

@@ -9,6 +9,13 @@
     justify-content: center;
     align-items: center;
 }
+.serviceId {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
 .serviceCard {
     background-color: rgba(0, 0, 0, 0.122);
     width: 115px;
@@ -20,28 +27,45 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.serviceId {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-}
-.serviceList {
-    flex-direction: row !important;
-}
-.serviceList div {
-    margin: 0 3rem !important;
-}
-.serviceDescription {
-    text-align: center;
+    position: relative;
 }
 .seeCert {
-    background-color: #34394258;
-    border-radius: 8px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    rotate: -20deg;
+    top: 0;
+    left: 0;
+    color: white;
+    margin: auto;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+}
+.introId {
+    display: flex;
+    flex-direction: column;
+}
+.introHeading {
     text-align: center;
-    padding: 0 0.5rem; 
+    margin: auto;
+}
+.introImage {
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.aboutMe {
+    display: flex;
+    flex-direction: column;
+}
+.aboutMeImage {
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 2rem;
 }
 @media (min-width: 576px) and (max-width: 1023px) {
     .activity {
@@ -51,5 +75,26 @@
 @media (min-width: 1024px) {
     .activity {
         width: 65%;
+    }
+    .aboutMe {
+        flex-direction: row;
+    }
+    .aboutMeImage {
+        width: 10rem;
+        height: 10rem;
+        align-items: center;
+        margin: auto 2rem auto 0;
+    }
+    .intro {
+        flex-direction: column;
+    }
+    .introId {
+        flex-direction: row;
+    }
+    .introImage {
+        width: 10rem;
+        height: 10rem;
+        align-items: center;
+        margin: auto 2rem auto 0;
     }
 }
