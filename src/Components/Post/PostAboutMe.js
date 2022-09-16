@@ -8,18 +8,13 @@ const PostAboutMe = () => {
                 <div className="aboutMe">
                     <div>
                         <p className="text-lg font-apple font-normal px-6 text-justify text-center">
-                            I am a passionate <span className="theme-text-secondary  averta font-bold "> Developer </span>driven by motivation and desire to learn the field inside and out.
-                            With critical thinking I execute tasks in detail while keeping development progress aligned with project goals.
+                            I am a passionate <span className="theme-text-secondary  averta font-bold ">Developer </span>driven by motivation and desire to learn the field inside and out. With critical thinking I execute tasks in detail while keeping development progress aligned with project goals.
                         </p>
                         <p className="text-lg font-apple font-normal px-6 text-justify text-center mt-4">
-                            I love being <span className="theme-text-secondary  averta font-bold "> organized </span> and to achieve this I make use of the Getting Things Done(GTD) method.
+                            I love being <span className="theme-text-secondary  averta font-bold ">organized </span> and to achieve this I make use of the Getting Things Done(GTD) method.
                         </p>
                         <p className="text-lg font-apple font-normal px-6 text-justify text-center mt-4">
-                            When I am not studying, working or learning I enjoy my free time with 
-                            <span className="theme-text-secondary  averta font-bold "> friends </span> and 
-                            <span className="theme-text-secondary  averta font-bold "> family</span>, my 4 lovely 
-                            <span className="theme-text-secondary  averta font-bold "> dogs </span> and a good 
-                            <span className="theme-text-secondary  averta font-bold "> videogame </span>.
+                            When I am not studying, working or learning I enjoy my free time with <span className="theme-text-secondary  averta font-bold ">friends </span>and<span className="theme-text-secondary  averta font-bold "> family</span>, my 4 lovely<span className="theme-text-secondary  averta font-bold "> dogs</span> and a good<span className="theme-text-secondary  averta font-bold "> videogame</span>.
                         </p>
                     </div>
                     <img className="aboutMeImage" src="/media/me/me.png" alt="my photo" />

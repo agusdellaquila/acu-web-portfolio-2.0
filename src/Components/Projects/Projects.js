@@ -51,12 +51,21 @@ const projects = [
     {
         id: 6,
         name: 'xls admin panel',
-        href: 'https://acu-dex.vercel.app/',
+        href: '#',
         imageSrc: '/media/projects/xls.png',
         imageAlt: 'xls project',
         description: "A side project of mine that I built as an alternative to SQL. In my country a lot of small businesses use excel as their database, so I built this xls file system that does not need SQL. You just upload your xls file and the data will be displayed on your site. If you change your file and upload it again, the site updates itself.",
-        techs: ['react', 'js', 'css']
-    }
+        techs: ['express', 'react', 'js', 'css']
+    },
+    {
+      id: 7,
+      name: 'Previous Portfolio',
+      href: 'https://agusdellaquila.github.io/acu-web-portfolio/',
+      imageSrc: 'http://localhost:3000/media/me/animojiPc.svg',
+      imageAlt: 'Previous portfolio',
+      description: "My old portfolio, that inspired this new re-design",
+      techs: ['js', 'css', 'html']
+  }
 ]
   
 const Projects = () => {
@@ -76,7 +85,7 @@ const Projects = () => {
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {projects.map((project) => (
               <div key={project.id} className="theme-bg-alt shadow-lg rounded-2xl pb-6 p-2">
-                <a href={project.href} target="blank" className="group">
+                <a href={project.href} target="_blank"  rel="noreferrer" className="group">
                   <div className="aspect-w-1 aspect-h-1 w-full flex overflow-hidden rounded-lg h-60 xl:aspect-w-7 xl:aspect-h-8">
                     <img
                       src={project.imageSrc}
@@ -104,7 +113,7 @@ const Projects = () => {
           </div>
 
           {
-            details ? <Alert setDetails={setDetails} image={itemDetailsRender.imageSrc} imageAlt={itemDetailsRender.imageAlt} link={itemDetailsRender.link} description={itemDetailsRender.description} /> : null
+            details ? <Alert setDetails={setDetails} image={itemDetailsRender.imageSrc} imageAlt={itemDetailsRender.imageAlt} link={itemDetailsRender.href} description={itemDetailsRender.description} /> : null
           }
 
         </div>

@@ -13,7 +13,7 @@ const Alert = ({image, imageAlt, description, link, setDetails }) => {
                 <p className="fs5 w-full mt3 theme-text-primary">{description}</p>
             </div>
             <div className='justify-center m-auto w-max-content mt-8'>
-                <a className='theme-bg-accent text-white p-2 averta rounded' href={link}> Visit deploy </a>
+                <a className='theme-bg-accent text-white p-2 averta rounded' href={link} target="_blank" rel="noreferrer"> Visit deploy </a>
             </div>
         </div>
   )
