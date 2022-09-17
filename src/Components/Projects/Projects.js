@@ -65,7 +65,17 @@ const projects = [
       imageAlt: 'Previous portfolio',
       description: "My old portfolio, that inspired this new re-design",
       techs: ['js', 'css', 'html']
-  }
+    },
+    {
+      id: 8,
+      name: 'Java To-Do List App',
+      href: 'https://github.com/agusdellaquila/Java-ToDo-List-App',
+      imageSrc: 'https://img.icons8.com/color/344/todo-list--v1.png',
+      imageAlt: 'Java to-do list app',
+      description: "Java To-Do App I did on University class to practise OOP",
+      techs: ['java']
+    }
+
 ]
   
 const Projects = () => {
@@ -99,7 +109,7 @@ const Projects = () => {
                   <p className="mt-4 averta text-sm cursor-pointer text-gray-500" onClick={() => showDetails(project)}> More info </p>
                   <div className="flex mt-4">
                     {project.techs.map((tech) => {
-                      let colors = (tech === 'html') ? 'bg-yellow-600 tech-bubble' : (tech === 'css') ? 'bg-blue-200 tech-bubble' : (tech === 'js') ? 'bg-yellow-500 tech-bubble' : (tech === 'react') ? 'bg-indigo-500 tech-bubble' : (tech === 'express') ? 'bg-gray-700 tech-bubble' : 'bg-gray-300 tech-bubble'
+                      let colors = (tech === 'html') ? 'bg-yellow-600 tech-bubble' : (tech === 'css') ? 'bg-blue-200 tech-bubble' : (tech === 'js') ? 'bg-yellow-500 tech-bubble' : (tech === 'react') ? 'bg-indigo-500 tech-bubble' : (tech === 'express') ? 'bg-gray-700 tech-bubble' : (tech === 'java') ? 'bg-orange-700 tech-bubble' : 'bg-gray-300 tech-bubble'
                       return (
                         <div key={tech} className="tooltip">
                           <div className={`${colors}`}></div>

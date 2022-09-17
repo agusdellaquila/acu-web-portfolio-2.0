@@ -17,7 +17,7 @@ const PostAboutMe = () => {
                             When I am not studying, working or learning I enjoy my free time with <span className="theme-text-secondary  averta font-bold ">friends </span>and<span className="theme-text-secondary  averta font-bold "> family</span>, my 4 lovely<span className="theme-text-secondary  averta font-bold "> dogs</span> and a good<span className="theme-text-secondary  averta font-bold "> videogame</span>.
                         </p>
                     </div>
-                    <img className="aboutMeImage" src="/media/me/me.png" alt="my photo" />
+                    <img className="aboutMeImage" src="/media/me/me.png" alt="me" />
                 </div>
             </div>
         </div>
