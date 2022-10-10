@@ -1,6 +1,6 @@
 .completed {
     color: #9ca3af;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
 .sidetasks {
     width: 90%;

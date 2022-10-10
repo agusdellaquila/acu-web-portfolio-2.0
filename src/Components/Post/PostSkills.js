@@ -30,6 +30,29 @@ const PostSkills = () => {
                     </section>
                     <section className="serviceCard">
                         <div className="serviceId">
+                            <img src="https://img.icons8.com/color/48/000000/sql.png" width="48px" height="48px" alt="SQL skill icon" />
+                            <p className="pt2">SQL</p>
+                        </div>
+                        <div className="seeCert">
+                            <a href="https://drive.google.com/file/d/1Un1EAszGal8RQJwiArzZgNVDd5K7ZIKv/view?usp=sharing" target="_blank" rel="noreferrer">
+                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
+                            </a>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
+                            <img src="https://img.icons8.com/color/344/java-coffee-cup-logo--v1.png" width="48px" height="48px" alt="java skill icon" />
+                            <p className="pt2">Java</p>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
+                            <img src="https://img.icons8.com/color/344/git.png" width="48px" height="48px" alt="git skill icon" />
+                            <p className="pt2">Git</p>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
                             <img src="https://img.icons8.com/fluency/344/node-js.png" width="48px" height="48px" alt="node skill icon" />
                             <p className="pt2">Node.js</p>
                         </div>
@@ -44,57 +67,6 @@ const PostSkills = () => {
                         <div className="serviceId">
                             <img src="https://img.icons8.com/color/344/mongodb.png" width="48px" height="48px" alt="mongodb skill icon" />
                             <p className="pt2">MongoDb</p>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/344/java-coffee-cup-logo--v1.png" width="48px" height="48px" alt="java skill icon" />
-                            <p className="pt2">Java</p>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/48/000000/sql.png" width="48px" height="48px" alt="SQL skill icon" />
-                            <p className="pt2">SQL</p>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/344/git.png" width="48px" height="48px" alt="git skill icon" />
-                            <p className="pt2">Git</p>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/344/html-5.png" width="48px" height="48px" alt="html skill icon" />
-                            <p className="pt2">Html</p>
-                        </div>
-                        <div className="seeCert">
-                            <a href="https://drive.google.com/file/d/11w3Dl14stMFMjyOkGutUB1nMs6ZbhIDn/view?usp=sharing" target="_blank" rel="noreferrer">
-                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
-                            </a>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/344/css3.png" width="48px" height="48px" alt="css skill icon" />
-                            <p className="pt2">Css</p>
-                        </div>
-                        <div className="seeCert">
-                            <a href="https://drive.google.com/file/d/11w3Dl14stMFMjyOkGutUB1nMs6ZbhIDn/view?usp=sharing" target="_blank" rel="noreferrer">
-                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
-                            </a>
-                        </div>
-                    </section>
-                    <section className="serviceCard">
-                        <div className="serviceId">
-                            <img src="https://img.icons8.com/color/344/sass.png" width="48px" height="48px" alt="scss skill icon" />
-                            <p className="pt2">Scss</p>
-                        </div>
-                        <div className="seeCert">
-                            <a href="https://drive.google.com/file/d/11w3Dl14stMFMjyOkGutUB1nMs6ZbhIDn/view?usp=sharing" target="_blank" rel="noreferrer">
-                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
-                            </a>
                         </div>
                     </section>
                     <section className="serviceCard">
@@ -123,8 +95,36 @@ const PostSkills = () => {
                     </section>
                     <section className="serviceCard">
                         <div className="serviceId">
-                            <img src="https://img.icons8.com/color/48/000000/webflow.png" width="48px" height="48px" alt="webflow skill icon" />
-                            <p className="pt2">WebFlow</p>
+                            <img src="https://img.icons8.com/color/344/wordpress.png" width="48px" height="48px" alt="webflow skill icon" />
+                            <p className="pt2">Wordpress</p>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
+                            <img src="https://img.icons8.com/color/344/html-5.png" width="48px" height="48px" alt="html skill icon" />
+                            <p className="pt2">Html</p>
+                        </div>
+                        <div className="seeCert">
+                            <a href="https://drive.google.com/file/d/11w3Dl14stMFMjyOkGutUB1nMs6ZbhIDn/view?usp=sharing" target="_blank" rel="noreferrer">
+                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
+                            </a>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
+                            <img src="https://img.icons8.com/color/344/css3.png" width="48px" height="48px" alt="css skill icon" />
+                            <p className="pt2">Css</p>
+                        </div>
+                        <div className="seeCert">
+                            <a href="https://drive.google.com/file/d/11w3Dl14stMFMjyOkGutUB1nMs6ZbhIDn/view?usp=sharing" target="_blank" rel="noreferrer">
+                                <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/452/external-Verification-shopping-and-commerce-smashingstocks-flat-smashing-stocks.png"  width="48px" height="48px" alt="certification icon" />
+                            </a>
+                        </div>
+                    </section>
+                    <section className="serviceCard">
+                        <div className="serviceId">
+                            <img src="https://img.icons8.com/color/344/sass.png" width="48px" height="48px" alt="scss skill icon" />
+                            <p className="pt2">Scss</p>
                         </div>
                     </section>
                 </section>

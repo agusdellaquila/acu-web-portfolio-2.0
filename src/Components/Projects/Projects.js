@@ -5,6 +5,15 @@ import { useState } from "react"
 const projects = [
     {
       id: 1,
+      name: 'Hexa Solutions',
+      href: 'https://www.solutions-hexa.com/',
+      imageSrc: 'https://www.solutions-hexa.com/media/logo/hexa-logo-nbg.svg',
+      imageAlt: 'Hexa Solutions project',
+      description: "My personal web development and design studio I co-founded with 2 more team members. Hexa is an organization that aims to make your ideas into something real. ",
+      techs: ['react', 'js', 'css']
+    },
+    {
+      id: 2,
       name: 'EnPie',
       href: 'https://en-pie-wines.vercel.app/',
       imageSrc: 'https://en-pie-wines.vercel.app/images/logo.png',
@@ -13,7 +22,7 @@ const projects = [
       techs: ['react', 'js', 'css']
     },
     {
-      id: 2,
+      id: 3,
       name: 'Villa Barbara',
       href: 'http://villabarbara.sembrandopaz.org/',
       imageSrc: 'http://villabarbara.sembrandopaz.org/media/logo.png',
@@ -22,7 +31,7 @@ const projects = [
       techs: ['react', 'js', 'css']
     },
     {
-      id: 3,
+      id: 4,
       name: 'Rec0rder',
       href: 'https://github.com/agusdellaquila/rec0rder',
       imageSrc: '/media/projects/recorder.png',
@@ -31,7 +40,7 @@ const projects = [
       techs: ['express', 'react', 'js', 'css']
     },
     {
-      id: 4,
+      id: 5,
       name: 'Cobra Denim',
       href: 'https://cobra-denim.vercel.app/',
       imageSrc: '/media/projects/cobra.png',
@@ -40,7 +49,7 @@ const projects = [
       techs: ['html', 'css']
     },
     {
-        id: 5,
+        id: 6,
         name: 'AcuDex',
         href: 'https://acu-dex.vercel.app/',
         imageSrc: '/media/projects/acudex.png',
@@ -49,7 +58,7 @@ const projects = [
         techs: ['react', 'js', 'css']
     },
     {
-        id: 6,
+        id: 7,
         name: 'xls admin panel',
         href: '#',
         imageSrc: '/media/projects/xls.png',
@@ -58,7 +67,7 @@ const projects = [
         techs: ['express', 'react', 'js', 'css']
     },
     {
-      id: 7,
+      id: 8,
       name: 'Previous Portfolio',
       href: 'https://agusdellaquila.github.io/acu-web-portfolio/',
       imageSrc: 'http://localhost:3000/media/me/animojiPc.svg',
@@ -67,7 +76,7 @@ const projects = [
       techs: ['js', 'css', 'html']
     },
     {
-      id: 8,
+      id: 9,
       name: 'Java To-Do List App',
       href: 'https://github.com/agusdellaquila/Java-ToDo-List-App',
       imageSrc: 'https://img.icons8.com/color/344/todo-list--v1.png',

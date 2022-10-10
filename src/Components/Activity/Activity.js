@@ -7,8 +7,8 @@ const Activity = () => {
     return (
         <div className="activity justify-center m-auto">
             <PostIntro/>
-            <PostSkills/>
             <PostAboutMe/>
+            <PostSkills/>
         </div>
     )
 }
